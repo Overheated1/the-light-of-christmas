@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://yi7roc2wjosr"]
+
+[ext_resource type="FontFile" uid="uid://bxtday1ekje7v" path="res://font/Roboto-Regular.ttf" id="1_aokik"]
+[ext_resource type="Script" path="res://scripts/mainScene.gd" id="1_torxn"]
+[ext_resource type="Texture2D" uid="uid://dln62a7jcd1v5" path="res://assets/photo_2023-12-10_15-00-29.jpg" id="2_5lh13"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhm0m"]
+bg_color = Color(0.147446, 0.142757, 0.233757, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03021"]
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w0q07"]
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="mainScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_torxn")
+
+[node name="Photo2023-12-1015-00-29" type="Sprite2D" parent="."]
+position = Vector2(992, 556)
+scale = Vector2(1.919, 1.072)
+texture = ExtResource("2_5lh13")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 527.0
+offset_top = 7.0
+offset_right = 1580.0
+offset_bottom = 1107.0
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 166.0
+offset_right = 767.0
+offset_bottom = 269.0
+theme_override_fonts/font = ExtResource("1_aokik")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_dhm0m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_03021")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w0q07")
+text = "Start"
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = -8.495
+offset_right = 918.0
+offset_bottom = 87.515
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_aokik")
+theme_override_font_sizes/font_size = 80
+text = "The Light of Christmas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

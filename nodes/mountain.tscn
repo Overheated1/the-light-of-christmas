@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0bvlwgva2ubk"]
+
+[ext_resource type="Texture2D" uid="uid://cdkbbtupxq5al" path="res://assets/mountain.png" id="1_ua3nj"]
+
+[node name="mountain" type="Area2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ua3nj")
