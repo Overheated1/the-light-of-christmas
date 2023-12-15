@@ -14,7 +14,6 @@ var new_animation
 
 func transition_to(new_state):
 	state = new_state
-	print(state)
 	match state:
 		"IDLE":
 			new_animation = "IDLE"
@@ -26,7 +25,6 @@ func transition_to(new_state):
 			new_animation = "DEAD"
 		_:
 			pass
-			#new_animation = "IDLE"
 		
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -75,10 +73,3 @@ func _physics_process(delta):
 		#$AnimatedSprite.flip_h = false
 
 
-func _on_timer_timeout():
-	if $Fire.texture_scale > 0.2:
-		$Fire.texture_scale -= 0.2
-	else:
-		GLOBAL.to("res://nodes/mainScene.tscn")
-	
-	

@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://cugdppjv7i7gl"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_5nf11"]
+[ext_resource type="Texture2D" uid="uid://djjt47bjqari5" path="res://assets/sprite_e.png" id="1_okdax"]
+
+[sub_resource type="Animation" id="Animation_wo56g"]
+resource_name = "IDLE"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_alimm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rvtme"]
+_data = {
+"IDLE": SubResource("Animation_wo56g"),
+"RESET": SubResource("Animation_alimm")
+}
+
+[node name="enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_5nf11")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-8.5, -7.25)
+scale = Vector2(0.226562, 0.222656)
+texture = ExtResource("1_okdax")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_rvtme")
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-29, 19, -2, 21, -8, 14)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

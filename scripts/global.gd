@@ -13,3 +13,4 @@ func _process(delta):
 
 func to(path):
 	get_tree().change_scene_to_file(path)
+
