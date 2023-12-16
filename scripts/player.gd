@@ -55,21 +55,10 @@ func _physics_process(delta):
 		move_keyboard()
 	else:
 		move_mouse()
-	
-	if velocity.length() > 0:
-		pass
-		#$AnimatedSprite.play()
-	else:
-		pass
-		#$AnimatedSprite.stop()	
 	position += velocity * delta 
 	position.x =  clamp(position.x,0,screen_size.x)
 	position.y =  clamp(position.y,0,screen_size.y)
-	#if velocity.x != 0:
-		#$AnimatedSprite.animation = "Caminar"
-		#$AnimatedSprite.flip_h = velocity.x > 0
-	#if velocity.y != 0:
-		#$AnimatedSprite.animation = "Subir"
-		#$AnimatedSprite.flip_h = false
+	if velocity.x != 0:
+		$Sprite2D.flip_h = velocity.x < 0
 
 

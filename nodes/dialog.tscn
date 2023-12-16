@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=3 uid="uid://yip62cpo6oy1"]
+
+[ext_resource type="FontFile" uid="uid://bxtday1ekje7v" path="res://font/Roboto-Regular.ttf" id="2_tvbhd"]
+[ext_resource type="Texture2D" uid="uid://d4holwpg7l7cg" path="res://assets/player.png" id="2_ybwwo"]
+
+[sub_resource type="Animation" id="Animation_13wk1"]
+resource_name = "text_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_t65k0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7l5f7"]
+_data = {
+"RESET": SubResource("Animation_t65k0"),
+"text_animation": SubResource("Animation_13wk1")
+}
+
+[node name="dialog" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 12.0
+offset_top = 976.0
+offset_right = 892.0
+offset_bottom = 1077.0
+color = Color(0.258824, 0.258824, 0.258824, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 12.0
+offset_top = 976.0
+offset_right = 88.0
+offset_bottom = 1074.0
+texture = ExtResource("2_ybwwo")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 116.0
+offset_top = 977.0
+offset_right = 791.0
+offset_bottom = 1080.0
+scale = Vector2(1.01017, 1)
+theme_override_fonts/font = ExtResource("2_tvbhd")
+theme_override_font_sizes/font_size = 25
+text = "Condiciones de victoria moverse por encima de  los  1800 px 
+en x y 58 px en y o esquina superior derecha para los panas  "
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 801.0
+offset_top = 1027.0
+offset_right = 885.0
+offset_bottom = 1073.0
+text = "Ok
+"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Button")
+libraries = {
+"": SubResource("AnimationLibrary_7l5f7")
+}
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+offset_left = 12.0
+offset_top = 976.0
+offset_right = 792.0
+offset_bottom = 1078.0
+border_color = Color(0.74902, 0.509804, 0.180392, 1)
+border_width = 3.0
