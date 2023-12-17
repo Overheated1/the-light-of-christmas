@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c26firmttkw2t"]
+[gd_scene load_steps=24 format=3 uid="uid://c26firmttkw2t"]
 
 [ext_resource type="Script" path="res://scripts/1_level.gd" id="1_4yi4h"]
 [ext_resource type="PackedScene" uid="uid://bmsklrhagbxg8" path="res://nodes/player.tscn" id="1_rw4a3"]
@@ -39,6 +39,13 @@ animations = [{
 }]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_1b3v3"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_xf1si"]
+vertices = PackedVector2Array(16, 0, 0, 8, -16, 0, 0, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, -8, -16, 0, 0, 8, 16, 0)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_lh6k2"]
 vertices = PackedVector2Array(16, 0, 0, 8, -16, 0, 0, -8)
@@ -117,6 +124,7 @@ texture_region_size = Vector2i(32, 32)
 0:2/0/texture_origin = Vector2i(0, -7)
 0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_xf1si")
 
 [sub_resource type="TileSet" id="TileSet_mwujn"]
 tile_shape = 1
