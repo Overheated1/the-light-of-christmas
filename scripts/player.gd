@@ -12,6 +12,7 @@ var current_animation
 var new_animation
 @onready var camera : Camera2D = $Camera2D
 
+ 
 func transition_to(new_state):
 	state = new_state
 	match state:
@@ -48,8 +49,8 @@ func move_mouse():
 func _physics_process(delta):
 	if current_animation != new_animation:
 		current_animation = new_animation
-		$Sprite2D/AnimationPlayer.play(current_animation)
-		#missing change the states
+		$Sprite2D/AnimatedSprite2D.play(current_animation)
+		
 
 	if keyboard:
 		move_keyboard()
@@ -59,6 +60,9 @@ func _physics_process(delta):
 	position.x =  clamp(position.x,0,screen_size.x)
 	position.y =  clamp(position.y,0,screen_size.y)
 	if velocity.x != 0:
-		$Sprite2D.flip_h = velocity.x < 0
+		transition_to("RUN")
+		$Sprite2D/AnimatedSprite2D.flip_h = velocity.x < 0
+	else:
+		new_animation = "IDLE"
 
 

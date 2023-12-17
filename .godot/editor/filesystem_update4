@@ -1,0 +1,9 @@
+res://nodes/1_level.tscn
+res://nodes/mainScene.tscn
+res://scripts/cabin.gd
+res://scripts/enemy.gd
+res://scripts/dialog.gd
+res://scripts/1_level.gd
+res://nodes/hunter.tscn
+res://nodes/dialog.tscn
+res://nodes/firewood.tscn
