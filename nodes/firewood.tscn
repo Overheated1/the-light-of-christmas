@@ -35,11 +35,9 @@ color = Color(0.540113, 0.295572, 0.0682516, 1)
 texture = SubResource("GradientTexture2D_rwock")
 
 [node name="LoopAnimation" type="Node2D" parent="Fire"]
-visible = false
 position = Vector2(-3.3389, 3.4002)
 
 [node name="Fog" type="Sprite2D" parent="Fire"]
-visible = false
 modulate = Color(0.227451, 0.227451, 0.227451, 0.709804)
 self_modulate = Color(0.481789, 0.481789, 0.481789, 0.85098)
 material = SubResource("CanvasItemMaterial_2plpb")

@@ -10,7 +10,8 @@ var attackDist : float = 100
 @export var player : CharacterBody2D = get("res://nodes/player.tscn") 
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 @onready var timer : Node = player.get_child(2)
-  
+var health : int = 100
+
 func transition_to(new_state):
 	state = new_state
 	match state:
@@ -58,3 +59,6 @@ func _on_timer_timeout():
 func _on_timer_2_timeout():
 	if position.distance_to(player.position) <= attackDist:
 		timer.on_timeout()
+
+func take_damage():
+	queue_free()
