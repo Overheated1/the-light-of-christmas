@@ -58,6 +58,9 @@ libraries = {
 polygon = PackedVector2Array(-29, 19, -2, 21, -8, 14)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

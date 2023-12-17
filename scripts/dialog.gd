@@ -15,19 +15,18 @@ const images : Dictionary = {
 const texts_player : Array = [
 	"Player: Where am I?",
 	"Player: I don't remember anything",
-	"Player: Look here's a note",
+	"Player: What is this, a note?",
 	"Player: 'Those who don't see the path are destined to wander aimlessly in this world'",
-	"Player: I'll better get out of here",
-	"Player: I don't remember anything only that I am in this dark forest, I appeared in a cabin to 
-	the south"
+	"Player: I'd better get out of here",
+	"Player: Wait! Don't shot, I just woke up in a cabin to the southwest"
 ]
 
 const texts_hunter : Array = [
-	"Hunter: identify yourself strange",
-	"Hunter: or that abandoned cabin, I didn't know there was anyone there, well, better help for me 
-	,now i have two tasks to do,one is to prepare this bonfire ant the other is to find something to 
-	eat, can you help me with one?",
-	"Hunter: "
+	"Hunter: Who is there?",
+	"Hunter: Oh, that abandoned cabin, I didn't know there was anyone living there, well, if I were you,
+	I would leave this forest as quick as possible, but if you have time I need some
+	firewood and food. I'd do it myself but as you can see I am wounded",
+	"Hunter:"
 	
 ]
 var chats : int = 0
