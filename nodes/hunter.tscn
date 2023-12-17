@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://cjnwtj5cbr7pr"]
 
-[ext_resource type="Texture2D" uid="uid://dy04bicife7fp" path="res://assets/hunter.svg" id="1_4i1tl"]
+[ext_resource type="Texture2D" uid="uid://bix16v66i3xdd" path="res://assets/hunter.png" id="1_lofyy"]
 
 [node name="Hunter" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2, -1)
-scale = Vector2(0.34082, 0.339844)
-texture = ExtResource("1_4i1tl")
+position = Vector2(0.520499, 7.07716)
+scale = Vector2(0.37041, 0.259474)
+texture = ExtResource("1_lofyy")

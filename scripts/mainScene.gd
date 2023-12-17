@@ -11,6 +11,6 @@ func _process(delta):
 	pass
 
 
-func _on_button_pressed():
+func _on_texture_button_pressed():
 	GLOBAL.to("res://nodes/1_level.tscn")
 	

@@ -1,27 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://yi7roc2wjosr"]
+[gd_scene load_steps=6 format=3 uid="uid://yi7roc2wjosr"]
 
-[ext_resource type="FontFile" uid="uid://bxtday1ekje7v" path="res://font/Roboto-Regular.ttf" id="1_aokik"]
 [ext_resource type="Script" path="res://scripts/mainScene.gd" id="1_torxn"]
 [ext_resource type="Texture2D" uid="uid://dln62a7jcd1v5" path="res://assets/photo_2023-12-10_15-00-29.jpg" id="2_5lh13"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhm0m"]
-bg_color = Color(0.147446, 0.142757, 0.233757, 1)
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03021"]
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w0q07"]
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
+[ext_resource type="Texture2D" uid="uid://bgqfed0j4xonh" path="res://assets/start_b.svg" id="3_d0th0"]
+[ext_resource type="Texture2D" uid="uid://f32t2c1frsi5" path="res://assets/start_b_h.svg" id="4_3vv54"]
+[ext_resource type="Texture2D" uid="uid://gfxf5228f7vi" path="res://assets/title.svg" id="4_3xs6h"]
 
 [node name="mainScene" type="Control"]
 layout_mode = 3
@@ -44,30 +27,17 @@ offset_top = 7.0
 offset_right = 1580.0
 offset_bottom = 1107.0
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="TextureButton" type="TextureButton" parent="Panel"]
 layout_mode = 0
-offset_left = 280.0
-offset_top = 166.0
-offset_right = 767.0
-offset_bottom = 269.0
-theme_override_fonts/font = ExtResource("1_aokik")
-theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxFlat_dhm0m")
-theme_override_styles/hover = SubResource("StyleBoxFlat_03021")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_w0q07")
-text = "Start"
+offset_left = 278.0
+offset_top = 485.0
+offset_right = 758.0
+offset_bottom = 965.0
+texture_normal = ExtResource("3_d0th0")
+texture_pressed = ExtResource("4_3vv54")
 
-[node name="Label" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 102.0
-offset_top = -8.495
-offset_right = 918.0
-offset_bottom = 87.515
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("1_aokik")
-theme_override_font_sizes/font_size = 80
-text = "The Light of Christmas"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(1038, 269)
+texture = ExtResource("4_3xs6h")
 
-[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/TextureButton" to="." method="_on_texture_button_pressed"]

@@ -43,7 +43,6 @@ func move_keyboard():
 	move_and_slide()
 	
 func _input(event):
-	print("a")
 	if Input.is_action_pressed("E"):
 		if fuel > 0:
 			$Fire/Area2D/CollisionShape2D.disabled = false

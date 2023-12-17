@@ -8,7 +8,7 @@ var int_p : bool = false
 
 const images : Dictionary = {
 	'PLayer':preload("res://assets/player.png"),
-	'Hunter':preload("res://assets/hunter.svg"),
+	'Hunter':preload("res://assets/hunter.png"),
 	'Furrier':preload("res://assets/furrier.svg")
 }
 
