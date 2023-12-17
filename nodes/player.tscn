@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bmsklrhagbxg8"]
+[gd_scene load_steps=31 format=3 uid="uid://bmsklrhagbxg8"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_sw7ne"]
 [ext_resource type="Texture2D" uid="uid://ddh05dtxwlx7h" path="res://assets/sprite_p_r.png" id="2_obqbo"]
@@ -155,6 +155,15 @@ gradient = SubResource("Gradient_ba1hl")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_lgvow"]
+radius = 143.753
+
+[sub_resource type="Gradient" id="Gradient_jutw8"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2qgqc"]
+gradient = SubResource("Gradient_jutw8")
+fill_to = Vector2(0.00458716, 0.00458716)
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 5
 collision_mask = 5
@@ -200,4 +209,29 @@ position = Vector2(5, 1)
 scale = Vector2(0.330316, 0.311596)
 texture = SubResource("GradientTexture2D_hh5y0")
 
+[node name="Area2D" type="Area2D" parent="Fire"]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fire/Area2D"]
+shape = SubResource("CircleShape2D_lgvow")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -255.0
+offset_top = -263.0
+offset_right = 256.0
+offset_bottom = -236.0
+
+[node name="ColorRect" type="ColorRect" parent="ProgressBar"]
+layout_mode = 0
+offset_right = 510.0
+offset_bottom = 25.0
+color = Color(0.0784314, 0.0784314, 0.0784314, 0.207843)
+
+[node name="PointLight2D" type="PointLight2D" parent="ProgressBar"]
+position = Vector2(253.75, 13)
+scale = Vector2(7.92969, 0.40625)
+texture = SubResource("GradientTexture2D_2qgqc")
+
 [connection signal="timeout" from="less_light" to="less_light" method="on_timeout"]
+[connection signal="body_entered" from="Fire/Area2D" to="." method="_on_area_2d_body_entered"]

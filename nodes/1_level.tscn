@@ -143,12 +143,6 @@ layer_1/tile_data = PackedInt32Array(2555976, 2, 0, 2490440, 2, 0, 2424904, 2, 0
 layer_2/name = "2"
 layer_2/tile_data = PackedInt32Array(917610, 131074, 1, 852074, 131074, 1, 786538, 131074, 1, 721003, 131074, 1, 655467, 131074, 1, 655468, 131074, 1, 721004, 131074, 1, 721005, 131074, 1, 786541, 131074, 1, 852077, 131074, 1, 852076, 131074, 1, 786540, 131074, 1, 786539, 131074, 1, 852075, 131074, 1, 917611, 131074, 1, 917612, 131074, 1, 917613, 131074, 1, 917614, 131074, 1, 852078, 131074, 1, 786542, 131074, 1, 721006, 131074, 1, 655469, 131074, 1, 589933, 131074, 1, 589932, 131074, 1, 589931, 131074, 1)
 
-[node name="enemy" parent="." node_paths=PackedStringArray("player") groups=["enemies"] instance=ExtResource("4_lwskj")]
-process_mode = 1
-z_index = 5
-position = Vector2(813, 237)
-player = NodePath("../Player")
-
 [node name="dialog" parent="." instance=ExtResource("6_dkhka")]
 
 [node name="ColorRect" parent="dialog" index="0"]
@@ -167,11 +161,6 @@ offset_bottom = 1075.0
 
 [node name="ReferenceRect" parent="dialog" index="5"]
 offset_right = 1098.0
-
-[node name="enemy2" parent="." node_paths=PackedStringArray("player") groups=["enemies"] instance=ExtResource("4_lwskj")]
-z_index = 5
-position = Vector2(646, 580)
-player = NodePath("../Player")
 
 [node name="change_level" type="Timer" parent="."]
 
@@ -211,6 +200,19 @@ shape = SubResource("CircleShape2D_mw8sb")
 
 [node name="Hunter" parent="." instance=ExtResource("11_j3dya")]
 position = Vector2(993, 774)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="enemy" parent="Enemies" node_paths=PackedStringArray("player") groups=["enemies"] instance=ExtResource("4_lwskj")]
+process_mode = 1
+z_index = 5
+position = Vector2(813, 237)
+player = NodePath("../../Player")
+
+[node name="enemy2" parent="Enemies" node_paths=PackedStringArray("player") groups=["enemies"] instance=ExtResource("4_lwskj")]
+z_index = 5
+position = Vector2(646, 580)
+player = NodePath("../../Player")
 
 [connection signal="timeout" from="change_level" to="." method="_on_change_level_timeout"]
 [connection signal="body_entered" from="cabin" to="dialog" method="_on_cabain_body_entered"]

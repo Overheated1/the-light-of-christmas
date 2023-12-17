@@ -1,2 +1,9 @@
-res://nodes/1_level.tscn
+res://nodes/player.tscn
+res://scripts/player.gd
+res://nodes/enemy.tscn
 res://scripts/enemy.gd
+res://nodes/1_level.tscn
+res://nodes/mainScene.tscn
+res://nodes/hunter.tscn
+res://nodes/firewood.tscn
+res://nodes/dialog.tscn
